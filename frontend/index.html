@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Cadastro de Tarefa</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h2>Cadastro de Tarefa</h2>
-
-    <label for="titulo">Tarefa</label>
-    <input type="text" id="titulo" required>
-
-    <label for="descricao">Descrição</label>
-    <textarea id="descricao" rows="4" required></textarea>
-
-    <button onclick="enviarTarefa()">Enviar</button>
-
+  <main class="container">
+    <h1>Minha Lista de Tarefas</h1>
+    <form id="form">
+      <input type="text" id="titulo" placeholder="Título da tarefa" />
+      <textarea id="descricao" placeholder="Descrição"></textarea>
+      <button type="submit">Adicionar</button>
+    </form>
     <p id="mensagem"></p>
-  </div>
-
+    <ul id="lista-tarefas"></ul>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>

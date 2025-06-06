@@ -32,7 +32,16 @@ app.post('/api/tarefas', (req, res) => {
   tarefas.push(novaTarefa);
   fs.writeFileSync(DATA_FILE, JSON.stringify(tarefas, null, 2));
 
-  res.send('Tarefa salva com sucesso!');
+  res.status(201).json({ mensagem: 'Tarefa salva com sucesso!' });
+});
+
+// Rota para listar tarefas
+app.get('/api/tarefas', (req, res) => {
+  if (!fs.existsSync(DATA_FILE)) {
+    return res.json([]);
+  }
+  const tarefas = JSON.parse(fs.readFileSync(DATA_FILE));
+  res.json(tarefas);
 });
 
 app.listen(PORT, () => {
